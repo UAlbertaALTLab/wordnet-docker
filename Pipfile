@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "~=4.2"
+logme = "*"
+typing-extensions = "*"
+requests = "*"
+uwsgi = "*"
+nltk = "*"
+
+[dev-packages]
+hypothesis = "*"
+mypy = "*"
+pytest = "*"
+pytest-django = "*"
+django-stubs = "*"
+django-extensions = "*"
+django-debug-toolbar = "*"
+black = "*"
+
+[requires]
+python_version = "3.10"
