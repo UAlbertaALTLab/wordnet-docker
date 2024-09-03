@@ -1,0 +1,8 @@
+version: "3"
+services:
+  wordnet:
+    restart: always
+    hostname: wordnet-container
+    image: ghcr.io/ualbertaaltlab/wordnet-docker:latest
+    ports:
+    - "8101:8000"
