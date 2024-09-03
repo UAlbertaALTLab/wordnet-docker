@@ -7,9 +7,6 @@ def index(request):
     context = {
         "wordnet": "We want to see the wizard of oz!",
         "search": search,
-        "results": results(search)
+        "results": nltk.search(search)
     }
     return render(request, "wordnet/index.html", context)
-
-def results(search):
-    return nltk.search(search) if search else []

@@ -39,22 +39,22 @@
                         <td>{{result.definition}}</td>
                         <td>
                             {% for lemma in result.lemmas %}
-                            <a href="{{main_url}}?search={{lemma.name}}">
-                                {{lemma.name}}
+                            <a href="{{main_url}}?search={{lemma}}">
+                                {{lemma}}
                             </a><br/>
                             {% endfor %}
                         </td>
                         <td>
                             {% for hyponym in result.hyponyms %}
-                            <a href="{{main_url}}?search={{hyponym.name}}">
-                                {{hyponym.name}}
+                            <a href="{{main_url}}?search={{hyponym}}">
+                                {{hyponym}}
                             </a><br/>
                             {% endfor %}
 
                         </td>
                         <td>{% for hypernym in result.hypernyms %}
-                            <a href="{{main_url}}?search={{hypernym.name}}">
-                                {{hypernym.name}}
+                            <a href="{{main_url}}?search={{hypernym}}">
+                                {{hypernym}}
                             </a><br/>
                             {% endfor %}</td>
                     </tr>
