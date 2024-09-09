@@ -2,7 +2,7 @@ from nltk.corpus import wordnet as wn
 from nltk.corpus.reader.wordnet import Synset
 import re
 
-format_regexp = r'^\W*\((?P<pos>\w+)\)\W+(?P<stem>\w+)\W*\#\W*(?P<num>\d+)\W*\Z'
+format_regexp = r'^\W*\((?P<pos>\w+)\)\W+(?P<stem>\w.*)\W*\#\W*(?P<num>\d+)\W*\Z'
 
 def candidates(keyword):
     if not keyword:
@@ -18,7 +18,8 @@ def candidates(keyword):
 
 def name_format(synset : Synset):
     data = synset.name().split(".")
-    return f"({data[1]}) {data[0]}#{int(data[2])}"
+    entry = ".".join(data[0:-2])
+    return f"({data[-2]}) {entry}#{int(data[-1])}"
 
 def normalize_keyword(keyword: str) -> str:
     matches = re.match(format_regexp, keyword)
