@@ -2,7 +2,7 @@ from nltk.corpus import wordnet as wn
 from nltk.corpus.reader.wordnet import Synset
 import re
 
-format_regexp = r'^\W*\((?P<pos>\w+)\)\W+(?P<stem>\w.*)\W*\#\W*(?P<num>\d+)\W*\Z'
+format_regexp = r'^\s*\((?P<pos>\w+)\)\s+(?P<stem>[^\s]+)\s*\#\s*(?P<num>\d+)\s*\Z'
 
 def candidates(keyword):
     if not keyword:
