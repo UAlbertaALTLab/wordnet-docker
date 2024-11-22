@@ -34,7 +34,8 @@ def normalize_result(result):
         "definition" : result.definition,
         "lemmas" : [lemma.name for lemma in result.lemmas()],
         "hyponyms" : [name_format(r) for r in result.hyponyms()],
-        "hypernyms" : [name_format(r) for r in result.hypernyms()]
+        "hypernyms" : [name_format(r) for r in result.hypernyms()],
+        "holonyms" : [name_format(r) for r in result.member_holonyms()]
     }
 
 def search(keyword):

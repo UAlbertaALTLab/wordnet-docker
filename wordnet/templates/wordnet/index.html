@@ -22,6 +22,7 @@
                     <th scope="col">Lemmas</th>
                     <th scope="col">Hyponyms</th>
                     <th scope="col">Hypernyms</th>
+                    <th scope="col">Holonyms</th>
                 </tr></thead>
                 <tbody>
                 {% for result in results %}
@@ -47,7 +48,14 @@
                             <a href="{{main_url}}?search={{hypernym|urlencode}}">
                                 {{hypernym}}
                             </a><br/>
-                            {% endfor %}</td>
+                            {% endfor %}
+                        </td>
+                            td>{% for holonym in result.holonyms %}
+                            <a href="{{main_url}}?search={{holonym|urlencode}}">
+                                {{holonym}}
+                            </a><br/>
+                            {% endfor %}
+                        </td>
                     </tr>
                 {% endfor %}
             </tbody>

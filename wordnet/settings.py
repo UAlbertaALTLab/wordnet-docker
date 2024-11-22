@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-b7mt&=fxn8&u7xf2c!ttl39@a2h1=r$kgr+lin7kt_3#^wb!75"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+DEBUG = True
 
 ALLOWED_HOSTS = [ "wordnet.altlab.dev", "altlab-itw", "localhost" , "vm-dev", "127.0.0.1" ]
 
