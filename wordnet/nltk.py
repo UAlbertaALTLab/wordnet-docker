@@ -29,9 +29,15 @@ def name_format_toolbox(synset : Synset, new_index, new_key):
     if new_index is None or new_key is None:
         data = synset.name().split(".")
         entry = " ".join(".".join(data[0:-2]).split("_"))
-        return f"{entry} {pos} #{data[-1]}"
-    return f"{new_key} {pos} #{int(new_index+1)}"
+        return f"{entry} {pos} #{int(data[-1])}"
+    candidate = wn.morphy(new_key)
+    if candidate in [lemma.name() for lemma in synset.lemmas()]:
+        return f"{candidate} {pos} #{int(new_index+1)}"
+    data = synset.name().split(".")
+    entry = " ".join(".".join(data[0:-2]).split("_"))
+    return f"{entry} {pos} #{int(data[-1])}"
 
+    
 def normalize_keyword(keyword: str) -> str:
     matches = re.match(format_regexp, keyword)
     if matches:
