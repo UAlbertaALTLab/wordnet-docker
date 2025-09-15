@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [ "wordnet.altlab.dev", "altlab-itw", "localhost" , "vm-dev", "127.0.0.1" ]
 
+CSRF_TRUSTED_ORIGINS = ["https://*.altlab.dev", "https://*.altlab.app"]
 
 # Application definition
 
