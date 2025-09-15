@@ -29,7 +29,7 @@ def diff_view(request):
         "left_branch": parsed["left_branch"],
         "right_branch": parsed["right_branch"],
         "results": [ (diff.resolve(entry1) if entry1 else {"is_emtpy": True},
-                      diff.resolve(entry2) if entry2 else {"is_empty": True})
-                      for entry1, entry2 in zip_longest(parsed["left_lines"], parsed["right_lines"])]
+                      diff.resolve(entry2) if entry2 else {"is_empty": True}, i)
+                      for i, (entry1, entry2) in enumerate(zip_longest(parsed["left_lines"], parsed["right_lines"]))]
     }
     return render(request, "wordnet/diff.html", context)
